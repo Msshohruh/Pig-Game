@@ -77,7 +77,7 @@ holdBtn.addEventListener('click', () => {
     
     if (score[activePlayer] >= 10) {
         gameOver = true
-        document.querySelector(`.player--${activePlayer}`).style.backgroundColor = 'red'
+        document.querySelector(`.player--${activePlayer}`).style.backgroundColor = 'green'
         modalTitle.textContent = `PLAYER ${activePlayer + 1} WIN🏆`
         modal.classList.remove('hidden')
         overlay.classList.remove('hidden')
