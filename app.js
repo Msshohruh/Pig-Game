@@ -18,9 +18,8 @@ const overlay = document.querySelector('.overlay')
 
 
 modalBtn.addEventListener('click', () => {
-    document.querySelector(`.player--${activePlayer}`).style.backgroundColor = 'transparent'
-    document.querySelector('.player--0').classList.add('player--active') 
-    document.querySelector('.player--1').classList.remove('player--active') 
+    document.querySelector(`.player--0`).classList.add('player--active')
+    document.querySelector(`.player--${activePlayer}`).classList.remove('player-winner')
     currentScore = 0
     activePlayer = 0
     score = [0, 0]
@@ -77,11 +76,11 @@ holdBtn.addEventListener('click', () => {
     
     if (score[activePlayer] >= 10) {
         gameOver = true
-        document.querySelector(`.player--${activePlayer}`).style.backgroundColor = 'green'
+        document.querySelector(`.player--${activePlayer}`).classList.add('player-winner')
+        document.querySelector(`.player--${activePlayer}`).classList.remove('player--active')
         modalTitle.textContent = `PLAYER ${activePlayer + 1} WIN🏆`
         modal.classList.remove('hidden')
         overlay.classList.remove('hidden')
-        
     } else {
         changeActivePlayer()
     }
@@ -89,9 +88,8 @@ holdBtn.addEventListener('click', () => {
 })
 
 newGameBtn.addEventListener('click', () => {
-    document.querySelector(`.player--${activePlayer}`).style.backgroundColor = 'transparent'
-    document.querySelector('.player--0').classList.add('player--active') 
-    document.querySelector('.player--1').classList.remove('player--active') 
+    document.querySelector(`.player--0`).classList.add('player--active')
+    document.querySelector(`.player--${activePlayer}`).classList.remove('player-winner')
     currentScore = 0
     activePlayer = 0
     score = [0, 0]
